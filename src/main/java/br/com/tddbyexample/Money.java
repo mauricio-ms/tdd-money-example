@@ -1,6 +1,6 @@
 package br.com.tddbyexample;
 
-public class Money {
+public class Money implements Expression {
 
     protected int amount;
 
@@ -21,6 +21,10 @@ public class Money {
 
     String currency() {
         return currency;
+    }
+
+    Expression plus(Money addend) {
+        return new Money(amount + addend.amount, currency);
     }
 
     Money times(int multiplier) {
